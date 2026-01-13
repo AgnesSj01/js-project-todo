@@ -30,12 +30,17 @@ export function TodoList() {
             aria-pressed={todo.completed}
           >
             <span>
-              {todo.completed ? "✅ " : "⬜ "} {todo.title}
+              <input
+                type="checkbox"
+                checked={todo.completed}
+                onChange={() => toggleTodo(todo.id)}
+                onClick={(e) => e.stopPropagation()}
+              />
+              {todo.title}
             </span>
-            {/* Show a formatted creation date */}
-            <small>Skapad: {formatDate(todo.createdAt)}</small>
-          </TodoButton>
 
+            <small>Created: {formatDate(todo.createdAt)}</small>
+          </TodoButton>
           {/* Separate remove action with an accessible label */}
           <RemoveButton
             type="button"

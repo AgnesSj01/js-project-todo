@@ -43,6 +43,12 @@ export const TodoButton = styled.button`
     outline-offset: 2px;
     border-color: #2563eb;
   }
+
+  input[type="checkbox"] {
+    margin-right: 6px;
+    accent-color: #16a34a;
+    transform: scale(1.3);
+  }
 `;
 
 export const RemoveButton = styled(BaseButton)`
